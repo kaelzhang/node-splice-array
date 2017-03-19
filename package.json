@@ -13,7 +13,13 @@
     "url": "git://github.com/kaelzhang/node-splice-array.git"
   },
   "keywords": [
-    "splice-array"
+    "splice-array",
+    "splice",
+    "array",
+    "filter",
+    "promise",
+    "mutate",
+    "modify"
   ],
   "engines": {
     "node": ">=4"

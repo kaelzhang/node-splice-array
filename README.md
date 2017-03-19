@@ -14,7 +14,7 @@
 
 # splice-array
 
-<!-- description -->
+Splice an array synchronously or asynchronously
 
 ## Install
 
@@ -25,8 +25,33 @@ $ npm install splice-array --save
 ## Usage
 
 ```js
-const splice_array = require('splice-array')
+const splice = require('splice-array')
+const array = [1, 2, 3]
+
+splice(array, (x, i) => i % 2 === 1)  // returns [2]
+console.log(array)                    // [2]
+
+const array2 = [1, 2, 3]
+splice.p(array2, (x, i) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(i % 2 === 1)
+    }, 100)
+  })
+})
+.then(result => {
+  console.log(result === array2)    // true
+  console.log(result)               // [2]
+})
 ```
+
+## splice(array, remover, thisArg)
+
+Returns the modified `array`
+
+## splice.p(array, remover, thisArg)
+
+Returns `Promise`
 
 ## License
 
